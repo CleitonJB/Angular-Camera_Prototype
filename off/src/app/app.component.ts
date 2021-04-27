@@ -42,17 +42,20 @@ export class AppComponent implements OnInit {
     this.initCamera({ video: true, audio: true });
   }
 
-  initCamera(config:any) {
+  initCamera(config: any) {
     var browser = <any>navigator;
 
-    browser.getUserMedia = (browser.getUserMedia ||
+    browser.getUserMedia = (
+      browser.getUserMedia       ||
       browser.webkitGetUserMedia ||
-      browser.mozGetUserMedia ||
+      browser.mozGetUserMedia    ||
       browser.msGetUserMedia);
 
-    browser.mediaDevices.getUserMedia(config).then((stream: any) => {
+    browser.mediaDevices.getUserMedia(config)
+    .then((stream: any) => {
       this.video.srcObject = stream;
       this.video.play();
-    });
+    })
+    .catch((error: any) => alert(error));
   }
 }
