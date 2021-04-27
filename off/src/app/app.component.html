@@ -1,17 +1,30 @@
 <div class="container">
+  <!-- Video display -->
   <div class="video-container">
     <video #videoElement></video>
   </div>
 
   <!-- Buttons -->
   <div class="buttons-container">
+    <!-- Play -->
     <button (click)="start()" class="button-class">
       <mat-icon>play_arrow</mat-icon>
-      Play
     </button>
-    <button (click)="toggle()" class="button-class">Toggle</button>
-    <button (click)="pause()" class="button-class">Pause</button>
-    <button (click)="resume()" class="button-class">Resume</button>
-    <button (click)="sound()" class="button-class">Play with Sound</button>
+
+    <!-- Toggle -->
+    <button (click)="toggle()" class="button-class"></button>
+
+    <!-- Pause -->
+    <button (click)="pause()" class="button-class">
+      <mat-icon>pause</mat-icon>
+    </button>
+
+    <!-- Resume -->
+    <button (click)="resume()" class="button-class"></button>
+
+    <!-- Mic -->
+    <button (click)="sound()" class="button-class">
+      <mat-icon>mic_off</mat-icon>
+    </button>
   </div>
 </div>
