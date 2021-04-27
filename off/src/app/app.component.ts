@@ -6,12 +6,14 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'off';
-
-  @ViewChild('videoElement') private videoElement: any;
+  @ViewChild('videoElement') videoElement: any;
   video: any;
 
-  ngOnInit(): void {
+  isPlaying = false;
+
+  displayControls = true;
+
+  ngOnInit() {
     this.video = this.videoElement.nativeElement;
   }
 
@@ -19,11 +21,24 @@ export class AppComponent implements OnInit {
     this.initCamera({ video: true, audio: false });
   }
 
+  pause() {
+    this.video.pause();
+  }
+
+  toggleControls() {
+    this.video.controls = this.displayControls;
+    this.displayControls = !this.displayControls;
+  }
+
+  resume() {
+    this.video.play();
+  }
+
   sound() {
     this.initCamera({ video: true, audio: true });
   }
 
-  private initCamera(config:any) {
+  initCamera(config:any) {
     var browser = <any>navigator;
 
     browser.getUserMedia = (browser.getUserMedia ||
@@ -32,8 +47,7 @@ export class AppComponent implements OnInit {
       browser.msGetUserMedia);
 
     browser.mediaDevices.getUserMedia(config).then((stream: any) => {
-      //this.video.src = window.URL.createObjectURL(stream);
-      this.video.srcObject = stream;
+      this.video.src = window.URL.createObjectURL(stream);
       this.video.play();
     });
   }

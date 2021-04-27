@@ -1,12 +1,46 @@
 <div class="container">
-  <input hidden #frontCamera type="file" accept="image/*" capture="user">
-  <button type="button" class="photo-button"(click)="frontCamera.click()">Câmera frontal</button>
+  <div style="text-align:center">
+    <h1>
+      <span class="label label-success">Working with Camera using Angular</span>
+    </h1>    
+  </div>
 
-  <input hidden #rearCamera type="file" accept="image/*" capture="environment">
-  <button type="button" class="photo-button" (click)="rearCamera.click()">Câmera traseira</button>
+  <div class="row" style="text-align:right">
+      <h3>
+        <span class="label label-warning">Balram Chavan </span>
+      </h3>
+      <div class="row" >
+        <div class="col-md-1 pull-right" >
+          <h4 >
+            <a href="https://www.linkedin.com/in/balram-chavan-957511116/" target="_blank">LinkedIn</a>
+          </h4>
+        </div>
+        <div class="col-md-1 pull-right">
+          <h4>
+            <a href="https://github.com/ultrasonicsoft" target="_blank">GitHub</a>
+          </h4>
+        </div>
+      </div>
+    </div>
 
-  <video #videoElement></video>
-  <button type="button" class="photo-button" (click)="start()">Chamada de vídeo</button>
+  <div class="row">
+    <button (click)="start()" class="btn btn-primary">Play</button>
+    <button (click)="toggleControls()" class="btn btn-success">Toggle Controls</button>
+    <button (click)="pause()" class="btn btn-warning">Pause</button>
+    <button (click)="resume()" class="btn btn-info">Resume</button>
+    <button (click)="sound()" class="btn btn-danger">Play with Sound</button>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="text-center">
+        <h3>
+          <video #videoElement></video>
+        </h3>
+      </div>
+
+    </div>
+
+  </div>
+
 </div>
-
-<router-outlet></router-outlet>
