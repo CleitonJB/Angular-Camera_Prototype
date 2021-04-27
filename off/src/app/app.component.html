@@ -1,0 +1,12 @@
+<div class="container">
+  <input hidden #frontCamera type="file" accept="image/*" capture="user">
+  <button type="button" class="photo-button"(click)="frontCamera.click()">Câmera frontal</button>
+
+  <input hidden #rearCamera type="file" accept="image/*" capture="environment">
+  <button type="button" class="photo-button" (click)="rearCamera.click()">Câmera traseira</button>
+
+  <video #videoElement></video>
+  <button type="button" class="photo-button" (click)="start()">Chamada de vídeo</button>
+</div>
+
+<router-outlet></router-outlet>
