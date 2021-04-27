@@ -1,46 +1,17 @@
 <div class="container">
-  <div style="text-align:center">
-    <h1>
-      <span class="label label-success">Working with Camera using Angular</span>
-    </h1>    
+  <div class="video-container">
+    <video #videoElement></video>
   </div>
 
-  <div class="row" style="text-align:right">
-      <h3>
-        <span class="label label-warning">Balram Chavan </span>
-      </h3>
-      <div class="row" >
-        <div class="col-md-1 pull-right" >
-          <h4 >
-            <a href="https://www.linkedin.com/in/balram-chavan-957511116/" target="_blank">LinkedIn</a>
-          </h4>
-        </div>
-        <div class="col-md-1 pull-right">
-          <h4>
-            <a href="https://github.com/ultrasonicsoft" target="_blank">GitHub</a>
-          </h4>
-        </div>
-      </div>
-    </div>
-
-  <div class="row">
-    <button (click)="start()" class="btn btn-primary">Play</button>
-    <button (click)="toggleControls()" class="btn btn-success">Toggle Controls</button>
-    <button (click)="pause()" class="btn btn-warning">Pause</button>
-    <button (click)="resume()" class="btn btn-info">Resume</button>
-    <button (click)="sound()" class="btn btn-danger">Play with Sound</button>
+  <!-- Buttons -->
+  <div class="buttons-container">
+    <button (click)="start()" class="button-class">
+      <mat-icon>play_arrow</mat-icon>
+      Play
+    </button>
+    <button (click)="toggle()" class="button-class">Toggle</button>
+    <button (click)="pause()" class="button-class">Pause</button>
+    <button (click)="resume()" class="button-class">Resume</button>
+    <button (click)="sound()" class="button-class">Play with Sound</button>
   </div>
-
-  <div class="row">
-    <div class="col-md-12">
-      <div class="text-center">
-        <h3>
-          <video #videoElement></video>
-        </h3>
-      </div>
-
-    </div>
-
-  </div>
-
 </div>
