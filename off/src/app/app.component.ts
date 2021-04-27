@@ -14,6 +14,10 @@ export class AppComponent implements OnInit {
   displayControls = true;
 
   ngOnInit() {
+    
+  }
+
+  ngAfterViewInit(): void {
     this.video = this.videoElement.nativeElement;
   }
 
@@ -47,7 +51,7 @@ export class AppComponent implements OnInit {
       browser.msGetUserMedia);
 
     browser.mediaDevices.getUserMedia(config).then((stream: any) => {
-      this.video.src = window.URL.createObjectURL(stream);
+      this.video.srcObject = stream;
       this.video.play();
     });
   }
