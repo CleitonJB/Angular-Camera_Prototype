@@ -8,6 +8,29 @@
     justify-content: center;
 }
 
+.video-container {
+    min-width: 80vw;
+    max-width: 80vw;
+    width: 80vw;
+}
+
+.buttons-container {
+    width: min(800px, 80vw);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.5rem;
+
+    .button-class {
+        flex-wrap: wrap;
+        flex-basis: 0;
+        flex-grow: 1;
+
+        height: 10vh;
+    }
+}
+
 .photo-button {
     width: 50%;
     background-color: lightgray;

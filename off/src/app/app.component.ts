@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
     this.video.pause();
   }
 
-  toggleControls() {
+  toggle() {
     this.video.controls = this.displayControls;
     this.displayControls = !this.displayControls;
   }
