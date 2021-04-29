@@ -6,15 +6,17 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { CallDashModule } from './call-dash/call-dash.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-
+    CallDashModule,
+    
     MatIconModule,
 
     BrowserAnimationsModule
