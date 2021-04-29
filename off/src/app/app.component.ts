@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
   }
 
   ngAfterViewInit(): void {
-    this.video = this.videoElement.nativeElement;
+    //this.video = this.videoElement.nativeElement;
   }
 
   start() {
